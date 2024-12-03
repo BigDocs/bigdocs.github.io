@@ -1,1 +1,1 @@
-## StarVector: Generating Scalable Vector Graphics Code from Images and Text
+## BigDocs: An Open And Permissively-Licensed Dataset For Training Multimodal Models On Document And Code Tasks
