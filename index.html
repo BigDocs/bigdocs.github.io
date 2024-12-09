@@ -23,89 +23,6 @@
   <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
 </head>
 
-<style>
-  .expandable-card .card-text-container {
-    max-height: 200px;
-    overflow-y: hidden;
-    position: relative;
-  }
-
-  .expandable-card.expanded .card-text-container {
-    max-height: none;
-  }
-
-  .expand-btn {
-    position: relative;
-    display: none;
-    background-color: rgba(255, 255, 255, 0.8);
-    /* margin-top: -20px; */
-    /* justify-content: center; */
-    color: #510c75;
-    border-color: transparent;
-  }
-
-  .expand-btn:hover {
-    background-color: rgba(200, 200, 200, 0.8);
-    text-decoration: none;
-    border-color: transparent;
-    color: #510c75;
-  }
-
-  .expand-btn:focus {
-    outline: none;
-    text-decoration: none;
-  }
-
-  .expandable-card:not(.expanded) .card-text-container:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 90px;
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 1));
-  }
-
-  .expandable-card:not(.expanded) .expand-btn {
-    margin-top: -40px;
-  }
-
-  .card-body {
-    padding-bottom: 5px;
-  }
-
-  .vertical-flex-layout {
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .figure-img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .adjustable-font-size {
-    font-size: calc(0.5rem + 2vw);
-  }
-
-  .chat-history {
-    flex-grow: 1;
-    overflow-y: auto;
-    /* overflow-x: hidden; */
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-  }
-
-  #gradio pre {
-    background-color: transparent;
-  }
-</style>
-
 <body>
 
 
@@ -119,25 +36,811 @@
                 <img src="static/images/logo.png" alt="BigDocs Logo" style="height: 60px; vertical-align: middle;">BigDocs: An Open and Permissively-Licensed Dataset for Training Multimodal Models on Document and Code Tasks
               </h1>
             </div>
-            <div class="column has-text-centered">
-              <img src="static/images/bigdocs-tasks.png" alt="BigDocs Tasks" width="100%">
+            
+            <!-- Authors Section -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://joanrod.github.io" style="color:#c70039 !important;">Juan Rodriguez<sup>1,2,3</sup></a>,</span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=kq17trAAAAAJ&hl=zh-CN" style="color:#c70039 !important;">Xiangru Jian<sup>1,4</sup></a>,</span>
+              <span class="author-block"><a href="https://sibasmarak.github.io/" style="color:#c70039 !important;">Siba Smarak Panigrahi<sup>1,2</sup></a>,</span>
+              <span class="author-block"><a href="https://tyz.netlify.app/" style="color:#c70039 !important;">Tianyu Zhang<sup>1,2,5</sup></a>,</span>
+              <span class="author-block"><a href="https://aarashfeizi.github.io/" style="color:#c70039 !important;">Aarash Feizi<sup>1,2,6</sup></a>,</span>
+              <span class="author-block"><a href="https://scholar.google.ca/citations?user=s8vVSvIAAAAJ&hl=en" style="color:#c70039 !important;">Abhay Puri<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=-GV1fg4AAAAJ&hl=en" style="color:#c70039 !important;">Akshay Kalkunte<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#c70039 !important;">François Savard<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="https://ahmedmasryku.github.io/" style="color:#ff5733 !important;">Ahmed Masry<sup>1,7</sup></a>,</span>
+              <span class="author-block"><a href="https://bajuka.github.io/" style="color:#ff5733 !important;">Shravan Nayak<sup>1,2,5</sup></a>,</span>
+              <span class="author-block"><a href="https://rabiul.me/" style="color:#ff5733 !important;">Rabiul Awal<sup>1,2,5</sup></a>,</span>
+              <span class="author-block"><a href="https://mila.quebec/en/directory/mahsa-massoud" style="color:#ff5733 !important;">Mahsa Massoud<sup>1,2,6</sup></a>,</span>
+              <span class="author-block"><a href="https://amirabaskohi.github.io/" style="color:#ff5733 !important;">Amirhossein Abaskohi<sup>1,8</sup></a>,</span>
+              <span class="author-block"><a href="https://mila.quebec/en/directory/zichao-li" style="color:#ff5733 !important;">Zichao Li<sup>1,2,6</sup></a>,</span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=fiy_i68AAAAJ&hl=zh-CN" style="color:#ff5733 !important;">Suyuchen Wang<sup>2,5</sup></a>,</span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=FxU9cG0AAAAJ&hl=en" style="color:#ff5733 !important;">Pierre-André Noël<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=xtlV5SAAAAAJ&hl=de" style="color:#ff5733 !important;">Mats Leon Richter<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Saverio Vadacchino<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Shubham Agarwal<sup>1,2</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Sanket Biswas<sup>9</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Sara Shanian<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Ying Zhang<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Noah Bolger<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Kurt MacDonald<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Simon Fauvel<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Sathwik Tejaswi<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Srinivas Sunkara<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Joao Monteiro<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Krishnamurthy DJ Dvijotham<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Torsten Scholak<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Nicolas Chapados<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Sepideh Kharagani<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#4286f4 !important;">Sean Hughes<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">M. Özsu<sup>4</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">Siva Reddy<sup>1,2,6,10</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">Marco Pedersoli<sup>1,3</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">Yoshua Bengio<sup>2,5,10</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">Christopher Pal<sup>1,2,10,11</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">Issam Laradji<sup>1,8</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">Spandana Gella<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">Perouz Taslakian<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">David Vazquez<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="#" style="color:#510c75 !important;">Sai Rajeswar<sup>1,2</sup></a></span>
             </div>
+
+            <!-- Affiliations Section -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> ServiceNow <sup>1</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> Mila <sup>2</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> École de Technologie Supérieure <sup>3</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> University of Waterloo <sup>4</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> Université de Montréal <sup>5</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> McGill University <sup>6</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> York University <sup>7</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> University of British Columbia <sup>8</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> Universitat Autònoma de Barcelona <sup>9</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> CIFAR AI Chair <sup>10</sup></span>
+              <span class="author-block"><b style="color:#000000;">&#x25B6;</b> Polytechnique Montréal <sup>11</sup></span>
+            </div>
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2412.04626" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i> <!-- Updated to use Academicons arXiv icon -->
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2412.04626" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>pdf</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;">
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+              <span class="link-block">
+                  <a href="#" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;">
+                  </span>
+                  <span>BigDocs-Bench</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;">
+                  </span>
+                  <span>Models</span>
+                </a>
+              </span> -->
+            </div>
+
           </div>
         </div>
       </div>
     </div>
   </section>
-    
-<section class="hero teaser">
-<div class="container is-max-desktop">
-    <div class="hero-body">
-    <h4 class="subtitle has-text-centered">
-        &#x1F51C;<span style="color: #ff3860">[Coming Soon!]</span> More details about dataset creation, experimental setup, and evaluation!
-    </h4>
-    </div>
-</div>
-</section>
+
+  <div class="container is-max-desktop">
+    <img src="static/images/bigdocs-tasks.png" alt="BigDocs Tasks" width="100%">
+  </div>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="content">
+        <h2 class="title is-3">Introduction</h2>
+        <p>
+          Documents remain a vital part of daily life, often combining text with visual elements like charts, tables, and diagrams to provide context and meaning. To enable AI systems to match human-like understanding of such documents, models must move beyond basic OCR to comprehend layouts, diagrams, and even hand-drawn sketches.
+        </p>
+        
+        <h2 class="title is-3">What is BigDocs?</h2>
+        <p>
+          BigDocs is a comprehensive solution for advanced document understanding, consisting of two key components:
+        </p>
+        <ul>
+          <li><strong>BigDocs-7.5M:</strong> A high-quality, open-access dataset of 7.5 million multimodal documents spanning 30 tasks</li>
+          <li><strong>BigDocs-Bench:</strong> A benchmark suite with 10 real-world-inspired tasks like reasoning over graphical interfaces and generating code from images</li>
+        </ul>
+
+
+        <div class="column has-text-centered">
+          <img src="static/images/pie-chart-data.png" alt="Data Distribution" width="100%">
+        </div>
+  
+
+        <h2 class="title is-3">BigDocs-Bench Tasks</h2>
+        <p>The benchmark includes 10 diverse tasks with high-quality training data and hidden test sets:</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Downstream Task</th>
+        <th># Training</th>
+        <th># Validation</th>
+        <th># Public Test</th>
+        <th># Hidden Test</th>
+        <th># Text Tokens</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Screenshot-2HTML (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>9,338</td>
+        <td>1,000</td>
+        <td>500</td>
+        <td>500</td>
+        <td>32,700 ± 53,105</td>
+      </tr>
+      <tr>
+        <td>Table-2LaTeX (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>77,669</td>
+        <td>1,000</td>
+        <td>500</td>
+        <td>500</td>
+        <td>438 ± 540</td>
+      </tr>
+      <tr>
+        <td>Image2SVG (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>198,000</td>
+        <td>2,000</td>
+        <td>748</td>
+        <td>500</td>
+        <td>2,871 ± 1,728</td>
+      </tr>
+      <tr>
+        <td>Image2Flow (GraphViz) (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>8,000</td>
+        <td>1,000</td>
+        <td>500</td>
+        <td>500</td>
+        <td>418 ± 124</td>
+      </tr>
+      <tr>
+        <td>Image2Flow (JSON) (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>8,000</td>
+        <td>1,000</td>
+        <td>500</td>
+        <td>500</td>
+        <td>1,771 ± 601</td>
+      </tr>
+      <tr>
+        <td>Chart-2Markdown (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>4,516</td>
+        <td>1,000</td>
+        <td>500</td>
+        <td>500</td>
+        <td>1,559 ± 4,442</td>
+      </tr>
+      <tr>
+        <td>Chart2Caption (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>5,412</td>
+        <td>1,300</td>
+        <td>650</td>
+        <td>500</td>
+        <td>94 ± 49</td>
+      </tr>
+      <tr>
+        <td>GUI2UserIntent (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>79,000</td>
+        <td>1,000</td>
+        <td>500</td>
+        <td>500</td>
+        <td>28 ± 4</td>
+      </tr>
+      <tr>
+        <td>GUI2Summary (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>79,000</td>
+        <td>1,000</td>
+        <td>500</td>
+        <td>500</td>
+        <td>132 ± 25</td>
+      </tr>
+      <tr>
+        <td>GUI-VQA (<img src="static/images/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1em;"> <a href="#">Link</a>)</td>
+        <td>78,991</td>
+        <td>1,000</td>
+        <td>500</td>
+        <td>500</td>
+        <td>35 ± 24</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- <section class="section"> -->
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">BigDocs-Bench Leaderboard</h2>
       
+    <table class="small-font-table" border="1" cellpadding="3" cellspacing="0" style="width: 80%; margin: auto; text-align: center; font-size: 0.9em;">
+      <thead>
+        <tr>
+          <th>Model</th>
+          <th>Chart2MD</th>
+          <th>Chart2Cap.</th>
+          <th>Image2Flow (GraphViz)</th>
+          <th>Image2Flow (JSON)</th>
+          <th>GUI2Sum.</th>
+          <th>GUI2Intent</th>
+          <th>Image2SVG</th>
+          <th>Screenshot2HTML</th>
+          <th>Table2Latex</th>
+          <th>GUI-VQA</th>
+          <th>Avg. Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="12"><strong>Open Models</strong></td>
+        </tr>
+        <tr>
+          <td>DocOwl-1.5-8B</td>
+          <td>0.08</td>
+          <td>18.69</td>
+          <td>0.00</td>
+          <td>0.00</td>
+          <td>11.22</td>
+          <td>13.88</td>
+          <td>3.58</td>
+          <td>3.50</td>
+          <td>75.07</td>
+          <td>27.22</td>
+          <td>15.32</td>
+        </tr>
+        <tr>
+          <td>Qwen2-VL-2B</td>
+          <td>41.17</td>
+          <td>22.88</td>
+          <td>0.00</td>
+          <td>0.00</td>
+          <td>23.98</td>
+          <td>17.70</td>
+          <td>23.18</td>
+          <td>6.46</td>
+          <td>74.83</td>
+          <td>26.40</td>
+          <td>23.66</td>
+        </tr>
+        <tr>
+          <td>Phi3.5-V-4B</td>
+          <td>60.64</td>
+          <td>21.88</td>
+          <td>1.61</td>
+          <td>0.65</td>
+          <td>27.80</td>
+          <td>10.81</td>
+          <td>34.57</td>
+          <td>4.25</td>
+          <td>74.14</td>
+          <td>34.96</td>
+          <td>27.13</td>
+        </tr>
+        <tr>
+          <td>LLAVA-NeXT-7B</td>
+          <td>22.00</td>
+          <td>20.67</td>
+          <td>1.58</td>
+          <td>0.46</td>
+          <td>21.99</td>
+          <td>12.38</td>
+          <td>20.53</td>
+          <td>5.00</td>
+          <td>73.81</td>
+          <td>27.54</td>
+          <td>20.60</td>
+        </tr>
+        <tr>
+          <td>Idefics2-8B</td>
+          <td>25.34</td>
+          <td>20.95</td>
+          <td>1.17</td>
+          <td>0.00</td>
+          <td>8.75</td>
+          <td>5.06</td>
+          <td>37.73</td>
+          <td>3.56</td>
+          <td>74.50</td>
+          <td>27.76</td>
+          <td>20.48</td>
+        </tr>
+        <tr>
+          <td>Llama-3.2.90B</td>
+          <td>45.21</td>
+          <td>20.60</td>
+          <td>0.73</td>
+          <td>0.52</td>
+          <td>22.16</td>
+          <td>12.04</td>
+          <td>45.97</td>
+          <td>7.32</td>
+          <td>74.79</td>
+          <td>27.28</td>
+          <td>25.66</td>
+        </tr>
+        <tr>
+          <td>Qwen2-VL-72B</td>
+          <td>70.47</td>
+          <td>19.42</td>
+          <td>1.07</td>
+          <td>0.23</td>
+          <td>18.80</td>
+          <td>33.94</td>
+          <td>54.43</td>
+          <td>10.03</td>
+          <td>74.51</td>
+          <td>30.67</td>
+          <td>31.36</td>
+        </tr>
+        <tr>
+          <td colspan="12"><strong>Closed Models</strong></td>
+        </tr>
+        <tr>
+          <td>GPT-4o 20240806</td>
+          <td>66.70</td>
+          <td>25.23</td>
+          <td>22.66</td>
+          <td>27.28</td>
+          <td>27.12</td>
+          <td>17.57</td>
+          <td>60.34</td>
+          <td>10.33</td>
+          <td>74.65</td>
+          <td>36.58</td>
+          <td>36.84</td>
+        </tr>
+        <tr>
+          <td>Claude-3.5 Sonnet</td>
+          <td>54.81</td>
+          <td>23.59</td>
+          <td>13.92</td>
+          <td>37.46</td>
+          <td>26.45</td>
+          <td>13.12</td>
+          <td>25.46</td>
+          <td>9.70</td>
+          <td>74.44</td>
+          <td>26.58</td>
+          <td>30.55</td>
+        </tr>
+        <tr>
+          <td>GeminiPro-1.5</td>
+          <td>76.63</td>
+          <td>25.90</td>
+          <td>11.51</td>
+          <td>33.59</td>
+          <td>25.54</td>
+          <td>16.79</td>
+          <td>15.21</td>
+          <td>7.43</td>
+          <td>75.22</td>
+          <td>35.35</td>
+          <td>32.32</td>
+        </tr>
+        <tr>
+          <td colspan="12"><strong>BigDocs Models (ours)</strong></td>
+        </tr>
+        <tr>
+          <td>DocOwl-1.5-8B + BigDocs</td>
+          <td>74.43</td>
+          <td>33.38</td>
+          <td>42.16</td>
+          <td>48.54</td>
+          <td>45.55</td>
+          <td><strong>89.15</strong></td>
+          <td>33.66</td>
+          <td>3.64</td>
+          <td>81.28</td>
+          <td>43.46</td>
+          <td>49.52</td>
+        </tr>
+        <tr>
+          <td>Qwen2-VL-2B + BigDocs</td>
+          <td>72.25</td>
+          <td>33.74</td>
+          <td>41.61</td>
+          <td>52.11</td>
+          <td>42.59</td>
+          <td>71.65</td>
+          <td>33.51</td>
+          <td>9.20</td>
+          <td>78.54</td>
+          <td>33.97</td>
+          <td>46.92</td>
+        </tr>
+        <tr>
+          <td>LLAVA-NeXT-7B+ BigDocs</td>
+          <td>72.78</td>
+          <td>32.88</td>
+          <td>59.66</td>
+          <td>71.49</td>
+          <td>46.14</td>
+          <td>79.55</td>
+          <td>60.63</td>
+          <td>10.40</td>
+          <td>80.79</td>
+          <td>40.67</td>
+          <td>55.50</td>
+        </tr>
+        <tr>
+          <td>Phi3.5-V-4B + BigDocs</td>
+          <td><strong>84.01</strong></td>
+          <td><strong>36.78</strong></td>
+          <td><strong>63.07</strong></td>
+          <td><strong>71.86</strong></td>
+          <td><strong>47.32</strong></td>
+          <td>86.91</td>
+          <td><strong>34.65</strong></td>
+          <td><strong>12.05</strong></td>
+          <td><strong>81.94</strong></td>
+          <td><strong>44.81</strong></td>
+          <td><strong>56.34</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<!-- </section> -->
+
+        <h2 class="title is-3">Current Limitations in the Field</h2>
+        <div class="columns">
+          <div class="column">
+            <div class="box">
+              <h4 class="title is-5">Scarcity of Open Datasets</h4>
+              <p>Many datasets for training VLMs are not publicly available, with limited transparency about their content.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <h4 class="title is-5">Simple Tasks in Open Datasets</h4>
+              <p>Public datasets often address only basic tasks, insufficient for complex real-world challenges.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <h4 class="title is-5">Restrictive Licensing</h4>
+              <p>Unclear or restrictive licenses make many datasets difficult to use for business purposes.</p>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="title is-3">BigDocs-7.5M Dataset</h2>
+        <h3 class="title is-4">Task Categories</h3>
+        <div class="columns">
+          <div class="column">
+            <div class="box">
+              <h4 class="title is-5">Document Information Extraction</h4>
+              <p>Enhanced OCR, layout analysis, and table detection</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <h4 class="title is-5">Document Understanding</h4>
+              <p>Document classification, question answering, and diagram analysis</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <h4 class="title is-5">Document Creation and Manipulation</h4>
+              <p>Transform visual data into HTML, LaTeX, Markdown and JSON</p>
+            </div>
+          </div>
+        </div>
+        
+        <style>
+
+          .model-section {
+            border-top: 2px solid #000;
+          }
+          .bigdocs-row {
+            background-color: #e0f7fa; /* Light cyan background for BigDocs rows */
+          }
+          .small-font-table {
+            font-size: 0.8em; /* Adjust the font size as needed */
+          }
+        </style>
+
+        <!-- <section class="section"> -->
+          <div class="container is-max-desktop">
+            <h2 class="title is-3">Results of Training on BigDocs-7.5M</h2>
+            <table class="small-font-table" border="1" cellpadding="5" cellspacing="0" style="margin: 0 auto; text-align: center; width: auto;">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>DocVQA<sub>VAL</sub></th>
+                  <th>InfoVQA<sub>VAL</sub></th>
+                  <th>DeepForm<sub>TEST</sub></th>
+                  <th>KLC<sub>TEST</sub></th>
+                  <th>WTQ<sub>TEST</sub></th>
+                  <th>TabFact<sub>TEST</sub></th>
+                  <th>ChartQA<sub>TEST</sub></th>
+                  <th>TextVQA<sub>VAL</sub></th>
+                  <th>MMIM<sub>TEST</sub></th>
+                  <th>DudeMini<sub>TEST</sub></th>
+                  <th>SlideVQA-M<sub>TEST</sub></th>
+                  <th>TableVQA<sub>TEST</sub></th>
+                  <th>Avg. Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- DocOwl Section -->
+                <tr class="model-section"></tr>
+                <tr>
+                  <td>DocOwl1.5-8B (instruct)</td>
+                  <td>80.73</td>
+                  <td>49.94</td>
+                  <td>68.84</td>
+                  <td>37.99</td>
+                  <td>38.87</td>
+                  <td>79.67</td>
+                  <td>68.56</td>
+                  <td>68.91</td>
+                  <td>33.67</td>
+                  <td>34.64</td>
+                  <td>31.62</td>
+                  <td>52.60</td>
+                  <td>53.84</td>
+                </tr>
+                <tr>
+                  <td>DocOwl1.5-8B (base)</td>
+                  <td>2.07</td>
+                  <td>1.84</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>24.44</td>
+                  <td>19.07</td>
+                  <td>3.30</td>
+                  <td>13.63</td>
+                  <td>5.36</td>
+                </tr>
+                <tr>
+                  <td>DocOwl1.5-8B (base) + DocStruct4M</td>
+                  <td>75.99</td>
+                  <td>46.88</td>
+                  <td>62.77</td>
+                  <td>35.21</td>
+                  <td>32.86</td>
+                  <td>71.56</td>
+                  <td>68.36</td>
+                  <td>65.08</td>
+                  <td>33.67</td>
+                  <td>29.00</td>
+                  <td>27.03</td>
+                  <td>46.27</td>
+                  <td>49.56</td>
+                </tr>
+                <tr class="bigdocs-row">
+                  <td>DocOwl1.5-8B (base) + BigDocs (Ours)</td>
+                  <td>78.70</td>
+                  <td>47.62</td>
+                  <td>64.39</td>
+                  <td>36.93</td>
+                  <td>35.69</td>
+                  <td>72.65</td>
+                  <td>65.80</td>
+                  <td>67.30</td>
+                  <td>32.33</td>
+                  <td>32.55</td>
+                  <td>29.60</td>
+                  <td>49.03</td>
+                  <td>51.05</td>
+                </tr>
+                <tr>
+                  <td>Qwen2-VL-2B (instruct)</td>
+                  <td>89.16</td>
+                  <td>64.11</td>
+                  <td>32.38</td>
+                  <td>25.18</td>
+                  <td>38.20</td>
+                  <td>57.21</td>
+                  <td>73.40</td>
+                  <td>79.90</td>
+                  <td>42.00</td>
+                  <td>45.23</td>
+                  <td>46.50</td>
+                  <td>43.07</td>
+                  <td>53.03</td>
+                </tr>
+                <tr>
+                  <td>Qwen2-VL-2B (base)</td>
+                  <td>7.26</td>
+                  <td>0.78</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>1.14</td>
+                  <td>34.89</td>
+                  <td>28.43</td>
+                  <td>14.55</td>
+                  <td>0.00</td>
+                  <td>7.25</td>
+                </tr>
+                <tr>
+                  <td>Qwen2-VL-2B (base) + DocStruct4M</td>
+                  <td>59.53</td>
+                  <td>32.00</td>
+                  <td>53.98</td>
+                  <td>36.38</td>
+                  <td>28.48</td>
+                  <td>64.24</td>
+                  <td>54.44</td>
+                  <td>55.89</td>
+                  <td>34.89</td>
+                  <td>28.78</td>
+                  <td>22.68</td>
+                  <td>46.53</td>
+                  <td>43.15</td>
+                </tr>
+                <tr class="bigdocs-row">
+                  <td>Qwen2-VL-2B (base) + BigDocs (Ours)</td>
+                  <td>57.23</td>
+                  <td>31.88</td>
+                  <td>49.31</td>
+                  <td>34.39</td>
+                  <td>31.61</td>
+                  <td>64.75</td>
+                  <td>68.60</td>
+                  <td>61.01</td>
+                  <td>35.67</td>
+                  <td>27.19</td>
+                  <td>17.46</td>
+                  <td>47.53</td>
+                  <td>43.89</td>
+                </tr>
+                <tr>
+                  <td>Phi3.5-Vision-4B (instruct)</td>
+                  <td>86.00</td>
+                  <td>56.20</td>
+                  <td>10.47</td>
+                  <td>7.49</td>
+                  <td>17.18</td>
+                  <td>30.43</td>
+                  <td>82.16</td>
+                  <td>73.12</td>
+                  <td>46.00</td>
+                  <td>37.20</td>
+                  <td>30.93</td>
+                  <td>70.70</td>
+                  <td>45.66</td>
+                </tr>
+                <tr>
+                  <td>Phi3.5-Vision-4B + DocStruct4M</td>
+                  <td>86.76</td>
+                  <td>68.90</td>
+                  <td>70.12</td>
+                  <td>37.83</td>
+                  <td>51.30</td>
+                  <td>82.12</td>
+                  <td>79.76</td>
+                  <td>68.60</td>
+                  <td>44.11</td>
+                  <td>35.52</td>
+                  <td>31.90</td>
+                  <td>69.17</td>
+                  <td>60.51</td>
+                </tr>
+                <tr class="bigdocs-row">
+                  <td>Phi3.5-Vision-4B + BigDocs (Ours)</td>
+                  <td>87.05</td>
+                  <td>70.05</td>
+                  <td>70.97</td>
+                  <td>37.45</td>
+                  <td>51.21</td>
+                  <td>81.24</td>
+                  <td>81.56</td>
+                  <td>68.72</td>
+                  <td>45.00</td>
+                  <td>36.15</td>
+                  <td>32.47</td>
+                  <td>67.77</td>
+                  <td>60.80</td>
+                </tr>
+                <tr>
+                  <td>LLAVA-NeXT-7B (instruct)</td>
+                  <td>63.51</td>
+                  <td>30.90</td>
+                  <td>1.30</td>
+                  <td>5.35</td>
+                  <td>20.06</td>
+                  <td>52.83</td>
+                  <td>52.12</td>
+                  <td>65.10</td>
+                  <td>38.89</td>
+                  <td>17.94</td>
+                  <td>7.46</td>
+                  <td>32.87</td>
+                  <td>32.36</td>
+                </tr>
+                <tr>
+                  <td>LLAVA-NeXT-7B + DocStruct4M</td>
+                  <td>60.95</td>
+                  <td>26.14</td>
+                  <td>39.78</td>
+                  <td>28.34</td>
+                  <td>25.90</td>
+                  <td>67.72</td>
+                  <td>61.20</td>
+                  <td>52.25</td>
+                  <td>25.78</td>
+                  <td>21.70</td>
+                  <td>15.33</td>
+                  <td>27.03</td>
+                  <td>37.68</td>
+                </tr>
+                <tr class="bigdocs-row">
+                  <td>LLAVA-NeXT-7B + BigDocs (Ours)</td>
+                  <td>57.13</td>
+                  <td>24.47</td>
+                  <td>46.38</td>
+                  <td>31.09</td>
+                  <td>27.06</td>
+                  <td>72.58</td>
+                  <td>54.72</td>
+                  <td>49.06</td>
+                  <td>17.78</td>
+                  <td>22.88</td>
+                  <td>16.07</td>
+                  <td>33.13</td>
+                  <td>37.70</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <!-- </section> -->
+        <ul>
+          <li>Performance gains up to 34.5% through fine-tuning</li>
+          <li>Surpasses proprietary models by 25.8% on BigDocs-Bench</li>
+          <li>Enables automation of repetitive document-related tasks</li>
+          <li>Transforms unstructured data into structured formats</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  </div>
 
 </body>
 
