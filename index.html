@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="icon" type="image/png" href="./static/images/logo.png">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
@@ -55,6 +55,7 @@
               <span class="author-block"><a href="https://mila.quebec/en/directory/zichao-li" style="color:#ff5733 !important;">Zichao Li<sup>1,2,6</sup></a>,</span>
               <span class="author-block"><a href="https://scholar.google.com/citations?user=fiy_i68AAAAJ&hl=zh-CN" style="color:#ff5733 !important;">Suyuchen Wang<sup>2,5</sup></a>,</span>
               <span class="author-block"><a href="https://scholar.google.com/citations?user=FxU9cG0AAAAJ&hl=en" style="color:#ff5733 !important;">Pierre-André Noël<sup>1</sup></a>,</span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=cnTEUtoAAAAJ&hl=en" style="color:#ff5733 !important;">Chao Wang<sup>1</sup></a>,</span>
               <span class="author-block"><a href="https://scholar.google.com/citations?user=xtlV5SAAAAAJ&hl=de" style="color:#ff5733 !important;">Mats Leon Richter<sup>1</sup></a>,</span>
               <span class="author-block"><a href="#" style="color:#4286f4 !important;">Saverio Vadacchino<sup>1</sup></a>,</span>
               <span class="author-block"><a href="#" style="color:#4286f4 !important;">Shubham Agarwal<sup>1,2</sup></a>,</span>
@@ -152,10 +153,6 @@
     </div>
   </section>
 
-  <div class="container is-max-desktop">
-    <img src="static/images/bigdocs-tasks.png" alt="BigDocs Tasks" width="100%">
-  </div>
-
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -167,11 +164,11 @@
         
         <h2 class="title is-3">What is BigDocs?</h2>
         <p>
-          BigDocs is a comprehensive solution for advanced document understanding, consisting of two key components:
+          BigDocs is a multimodal dataset effort for advanced document understanding, consisting of two key components:
         </p>
         <ul>
-          <li><strong>BigDocs-7.5M:</strong> A high-quality, open-access dataset of 7.5 million multimodal documents spanning 30 tasks</li>
-          <li><strong>BigDocs-Bench:</strong> A benchmark suite with 10 real-world-inspired tasks like reasoning over graphical interfaces and generating code from images</li>
+          <li><strong>BigDocs-7.5M:</strong> A high-quality, open-access, large-scale dataset of 7.5 million multimodal documents spanning 30 tasks</li>
+          <li><strong>BigDocs-Bench:</strong> A benchmark suite with 10 real-world-inspired tasks like reasoning over graphical user interfaces (GUI), websites and documents and generating code from images</li>
         </ul>
 
 
@@ -181,7 +178,12 @@
   
 
         <h2 class="title is-3">BigDocs-Bench Tasks</h2>
-        <p>The benchmark includes 10 diverse tasks with high-quality training data and hidden test sets:</p>
+        <p>The benchmark includes 10 diverse tasks with high-quality training and testing data, including a hidden test set. The following image and table provide a summary of the tasks:</p>
+
+  <div class="container is-max-desktop">
+    <img src="static/images/bigdocs-tasks.png" alt="BigDocs Tasks" width="100%">
+  </div>
+
         <table border="1" cellpadding="5" cellspacing="0">
     <thead>
       <tr>
