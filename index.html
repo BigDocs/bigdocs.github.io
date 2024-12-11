@@ -177,340 +177,336 @@
         </div>
   
 
-        <h2 class="title is-3">BigDocs-Bench Tasks</h2>
-        <p>The benchmark includes 10 diverse tasks with high-quality training and testing data, including a hidden test set. The following image and table provide a summary of the tasks:</p>
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">BigDocs-Bench Tasks</h2>
+          <div class="table-wrapper">
+            <table class="small-font-table">
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Train</th>
+                  <th>Val</th>
+                  <th>Test</th>
+                  <th>Hidden</th>
+                  <th>Tokens</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Screenshot-2HTML</td>
+                  <td>9.3K</td>
+                  <td>1.0K</td>
+                  <td>500</td>
+                  <td>500</td>
+                  <td>32.7K±53K</td>
+                </tr>
+                <tr>
+                  <td>Table-2LaTeX</td>
+                  <td>77.7K</td>
+                  <td>1.0K</td>
+                  <td>500</td>
+                  <td>500</td>
+                  <td>438±540</td>
+                </tr>
+                <tr>
+                  <td>Image2SVG</td>
+                  <td>198K</td>
+                  <td>2.0K</td>
+                  <td>748</td>
+                  <td>500</td>
+                  <td>2.9K±1.7K</td>
+                </tr>
+                <tr>
+                  <td>Image2Flow (GraphViz)</td>
+                  <td>8.0K</td>
+                  <td>1.0K</td>
+                  <td>500</td>
+                  <td>500</td>
+                  <td>418±124</td>
+                </tr>
+                <tr>
+                  <td>Image2Flow (JSON)</td>
+                  <td>8.0K</td>
+                  <td>1.0K</td>
+                  <td>500</td>
+                  <td>500</td>
+                  <td>1.8K±601</td>
+                </tr>
+                <tr>
+                  <td>Chart-2Markdown</td>
+                  <td>4.5K</td>
+                  <td>1.0K</td>
+                  <td>500</td>
+                  <td>500</td>
+                  <td>1.6K±4.4K</td>
+                </tr>
+                <tr>
+                  <td>Chart2Caption</td>
+                  <td>5.4K</td>
+                  <td>1.3K</td>
+                  <td>650</td>
+                  <td>500</td>
+                  <td>94±49</td>
+                </tr>
+                <tr>
+                  <td>GUI2UserIntent</td>
+                  <td>79K</td>
+                  <td>1.0K</td>
+                  <td>500</td>
+                  <td>500</td>
+                  <td>28±4</td>
+                </tr>
+                <tr>
+                  <td>GUI2Summary</td>
+                  <td>79K</td>
+                  <td>1.0K</td>
+                  <td>500</td>
+                  <td>500</td>
+                  <td>132±25</td>
+                </tr>
+                <tr>
+                  <td>GUI-VQA</td>
+                  <td>78.991</td>
+                  <td>1,000</td>
+                  <td>500</td>
+                  <td>500</td>
+                  <td>35±24</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-  <div class="container is-max-desktop">
-    <img src="static/images/bigdocs-tasks.png" alt="BigDocs Tasks" width="100%">
-  </div>
-
-        <table border="1" cellpadding="5" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Downstream Task</th>
-        <th># Training</th>
-        <th># Validation</th>
-        <th># Public Test</th>
-        <th># Hidden Test</th>
-        <th># Text Tokens</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Screenshot-2HTML </td>
-        <td>9,338</td>
-        <td>1,000</td>
-        <td>500</td>
-        <td>500</td>
-        <td>32,700 ± 53,105</td>
-      </tr>
-      <tr>
-        <td>Table-2LaTeX </td>
-        <td>77,669</td>
-        <td>1,000</td>
-        <td>500</td>
-        <td>500</td>
-        <td>438 ± 540</td>
-      </tr>
-      <tr>
-        <td>Image2SVG </td>
-        <td>198,000</td>
-        <td>2,000</td>
-        <td>748</td>
-        <td>500</td>
-        <td>2,871 ± 1,728</td>
-      </tr>
-      <tr>
-        <td>Image2Flow (GraphViz) </td>
-        <td>8,000</td>
-        <td>1,000</td>
-        <td>500</td>
-        <td>500</td>
-        <td>418 ± 124</td>
-      </tr>
-      <tr>
-        <td>Image2Flow (JSON) </td>
-        <td>8,000</td>
-        <td>1,000</td>
-        <td>500</td>
-        <td>500</td>
-        <td>1,771 ± 601</td>
-      </tr>
-      <tr>
-        <td>Chart-2Markdown </td>
-        <td>4,516</td>
-        <td>1,000</td>
-        <td>500</td>
-        <td>500</td>
-        <td>1,559 ± 4,442</td>
-      </tr>
-      <tr>
-        <td>Chart2Caption </td>
-        <td>5,412</td>
-        <td>1,300</td>
-        <td>650</td>
-        <td>500</td>
-        <td>94 ± 49</td>
-      </tr>
-      <tr>
-        <td>GUI2UserIntent </td>
-        <td>79,000</td>
-        <td>1,000</td>
-        <td>500</td>
-        <td>500</td>
-        <td>28 ± 4</td>
-      </tr>
-      <tr>
-        <td>GUI2Summary </td>
-        <td>79,000</td>
-        <td>1,000</td>
-        <td>500</td>
-        <td>500</td>
-        <td>132 ± 25</td>
-      </tr>
-      <tr>
-        <td>GUI-VQA </td>
-        <td>78,991</td>
-        <td>1,000</td>
-        <td>500</td>
-        <td>500</td>
-        <td>35 ± 24</td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <!-- <section class="section"> -->
-  <div class="container is-max-desktop">
-    <h2 class="title is-3">BigDocs-Bench Leaderboard</h2>
-      
-    <table class="small-font-table" border="1" cellpadding="3" cellspacing="0" style="width: 80%; margin: auto; text-align: center; font-size: 0.9em;">
-      <thead>
-        <tr>
-          <th>Model</th>
-          <th>Chart2MD</th>
-          <th>Chart2Cap.</th>
-          <th>Image2Flow (GraphViz)</th>
-          <th>Image2Flow (JSON)</th>
-          <th>GUI2Sum.</th>
-          <th>GUI2Intent</th>
-          <th>Image2SVG</th>
-          <th>Screenshot2HTML</th>
-          <th>Table2Latex</th>
-          <th>GUI-VQA</th>
-          <th>Avg. Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td colspan="12"><strong>Open Models</strong></td>
-        </tr>
-        <tr>
-          <td>DocOwl-1.5-8B</td>
-          <td>0.08</td>
-          <td>18.69</td>
-          <td>0.00</td>
-          <td>0.00</td>
-          <td>11.22</td>
-          <td>13.88</td>
-          <td>3.58</td>
-          <td>3.50</td>
-          <td>75.07</td>
-          <td>27.22</td>
-          <td>15.32</td>
-        </tr>
-        <tr>
-          <td>Qwen2-VL-2B</td>
-          <td>41.17</td>
-          <td>22.88</td>
-          <td>0.00</td>
-          <td>0.00</td>
-          <td>23.98</td>
-          <td>17.70</td>
-          <td>23.18</td>
-          <td>6.46</td>
-          <td>74.83</td>
-          <td>26.40</td>
-          <td>23.66</td>
-        </tr>
-        <tr>
-          <td>Phi3.5-V-4B</td>
-          <td>60.64</td>
-          <td>21.88</td>
-          <td>1.61</td>
-          <td>0.65</td>
-          <td>27.80</td>
-          <td>10.81</td>
-          <td>34.57</td>
-          <td>4.25</td>
-          <td>74.14</td>
-          <td>34.96</td>
-          <td>27.13</td>
-        </tr>
-        <tr>
-          <td>LLAVA-NeXT-7B</td>
-          <td>22.00</td>
-          <td>20.67</td>
-          <td>1.58</td>
-          <td>0.46</td>
-          <td>21.99</td>
-          <td>12.38</td>
-          <td>20.53</td>
-          <td>5.00</td>
-          <td>73.81</td>
-          <td>27.54</td>
-          <td>20.60</td>
-        </tr>
-        <tr>
-          <td>Idefics2-8B</td>
-          <td>25.34</td>
-          <td>20.95</td>
-          <td>1.17</td>
-          <td>0.00</td>
-          <td>8.75</td>
-          <td>5.06</td>
-          <td>37.73</td>
-          <td>3.56</td>
-          <td>74.50</td>
-          <td>27.76</td>
-          <td>20.48</td>
-        </tr>
-        <tr>
-          <td>Llama-3.2.90B</td>
-          <td>45.21</td>
-          <td>20.60</td>
-          <td>0.73</td>
-          <td>0.52</td>
-          <td>22.16</td>
-          <td>12.04</td>
-          <td>45.97</td>
-          <td>7.32</td>
-          <td>74.79</td>
-          <td>27.28</td>
-          <td>25.66</td>
-        </tr>
-        <tr>
-          <td>Qwen2-VL-72B</td>
-          <td>70.47</td>
-          <td>19.42</td>
-          <td>1.07</td>
-          <td>0.23</td>
-          <td>18.80</td>
-          <td>33.94</td>
-          <td>54.43</td>
-          <td>10.03</td>
-          <td>74.51</td>
-          <td>30.67</td>
-          <td>31.36</td>
-        </tr>
-        <tr>
-          <td colspan="12"><strong>Closed Models</strong></td>
-        </tr>
-        <tr>
-          <td>GPT-4o 20240806</td>
-          <td>66.70</td>
-          <td>25.23</td>
-          <td>22.66</td>
-          <td>27.28</td>
-          <td>27.12</td>
-          <td>17.57</td>
-          <td>60.34</td>
-          <td>10.33</td>
-          <td>74.65</td>
-          <td>36.58</td>
-          <td>36.84</td>
-        </tr>
-        <tr>
-          <td>Claude-3.5 Sonnet</td>
-          <td>54.81</td>
-          <td>23.59</td>
-          <td>13.92</td>
-          <td>37.46</td>
-          <td>26.45</td>
-          <td>13.12</td>
-          <td>25.46</td>
-          <td>9.70</td>
-          <td>74.44</td>
-          <td>26.58</td>
-          <td>30.55</td>
-        </tr>
-        <tr>
-          <td>GeminiPro-1.5</td>
-          <td>76.63</td>
-          <td>25.90</td>
-          <td>11.51</td>
-          <td>33.59</td>
-          <td>25.54</td>
-          <td>16.79</td>
-          <td>15.21</td>
-          <td>7.43</td>
-          <td>75.22</td>
-          <td>35.35</td>
-          <td>32.32</td>
-        </tr>
-        <tr>
-          <td colspan="12"><strong>BigDocs Models (ours)</strong></td>
-        </tr>
-        <tr>
-          <td>DocOwl-1.5-8B + BigDocs</td>
-          <td>74.43</td>
-          <td>33.38</td>
-          <td>42.16</td>
-          <td>48.54</td>
-          <td>45.55</td>
-          <td><strong>89.15</strong></td>
-          <td>33.66</td>
-          <td>3.64</td>
-          <td>81.28</td>
-          <td>43.46</td>
-          <td>49.52</td>
-        </tr>
-        <tr>
-          <td>Qwen2-VL-2B + BigDocs</td>
-          <td>72.25</td>
-          <td>33.74</td>
-          <td>41.61</td>
-          <td>52.11</td>
-          <td>42.59</td>
-          <td>71.65</td>
-          <td>33.51</td>
-          <td>9.20</td>
-          <td>78.54</td>
-          <td>33.97</td>
-          <td>46.92</td>
-        </tr>
-        <tr>
-          <td>LLAVA-NeXT-7B+ BigDocs</td>
-          <td>72.78</td>
-          <td>32.88</td>
-          <td>59.66</td>
-          <td>71.49</td>
-          <td>46.14</td>
-          <td>79.55</td>
-          <td>60.63</td>
-          <td>10.40</td>
-          <td>80.79</td>
-          <td>40.67</td>
-          <td>55.50</td>
-        </tr>
-        <tr>
-          <td>Phi3.5-V-4B + BigDocs</td>
-          <td><strong>84.01</strong></td>
-          <td><strong>36.78</strong></td>
-          <td><strong>63.07</strong></td>
-          <td><strong>71.86</strong></td>
-          <td><strong>47.32</strong></td>
-          <td>86.91</td>
-          <td><strong>34.65</strong></td>
-          <td><strong>12.05</strong></td>
-          <td><strong>81.94</strong></td>
-          <td><strong>44.81</strong></td>
-          <td><strong>56.34</strong></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-<!-- </section> -->
+        <div class="container is-max-desktop">
+          <h2 class="title is-3">BigDocs-Bench Leaderboard</h2>
+          <div class="table-wrapper">
+            <table class="small-font-table">
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Chart2MD</th>
+                  <th>Chart2Cap.</th>
+                  <th>Image2Flow (GraphViz)</th>
+                  <th>Image2Flow (JSON)</th>
+                  <th>GUI2Sum.</th>
+                  <th>GUI2Intent</th>
+                  <th>Image2SVG</th>
+                  <th>Screenshot2HTML</th>
+                  <th>Table2Latex</th>
+                  <th>GUI-VQA</th>
+                  <th>Avg. Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="12"><strong>Open Models</strong></td>
+                </tr>
+                <tr>
+                  <td>DocOwl-1.5-8B</td>
+                  <td>0.08</td>
+                  <td>18.69</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>11.22</td>
+                  <td>13.88</td>
+                  <td>3.58</td>
+                  <td>3.50</td>
+                  <td>75.07</td>
+                  <td>27.22</td>
+                  <td>15.32</td>
+                </tr>
+                <tr>
+                  <td>Qwen2-VL-2B</td>
+                  <td>41.17</td>
+                  <td>22.88</td>
+                  <td>0.00</td>
+                  <td>0.00</td>
+                  <td>23.98</td>
+                  <td>17.70</td>
+                  <td>23.18</td>
+                  <td>6.46</td>
+                  <td>74.83</td>
+                  <td>26.40</td>
+                  <td>23.66</td>
+                </tr>
+                <tr>
+                  <td>Phi3.5-V-4B</td>
+                  <td>60.64</td>
+                  <td>21.88</td>
+                  <td>1.61</td>
+                  <td>0.65</td>
+                  <td>27.80</td>
+                  <td>10.81</td>
+                  <td>34.57</td>
+                  <td>4.25</td>
+                  <td>74.14</td>
+                  <td>34.96</td>
+                  <td>27.13</td>
+                </tr>
+                <tr>
+                  <td>LLAVA-NeXT-7B</td>
+                  <td>22.00</td>
+                  <td>20.67</td>
+                  <td>1.58</td>
+                  <td>0.46</td>
+                  <td>21.99</td>
+                  <td>12.38</td>
+                  <td>20.53</td>
+                  <td>5.00</td>
+                  <td>73.81</td>
+                  <td>27.54</td>
+                  <td>20.60</td>
+                </tr>
+                <tr>
+                  <td>Idefics2-8B</td>
+                  <td>25.34</td>
+                  <td>20.95</td>
+                  <td>1.17</td>
+                  <td>0.00</td>
+                  <td>8.75</td>
+                  <td>5.06</td>
+                  <td>37.73</td>
+                  <td>3.56</td>
+                  <td>74.50</td>
+                  <td>27.76</td>
+                  <td>20.48</td>
+                </tr>
+                <tr>
+                  <td>Llama-3.2.90B</td>
+                  <td>45.21</td>
+                  <td>20.60</td>
+                  <td>0.73</td>
+                  <td>0.52</td>
+                  <td>22.16</td>
+                  <td>12.04</td>
+                  <td>45.97</td>
+                  <td>7.32</td>
+                  <td>74.79</td>
+                  <td>27.28</td>
+                  <td>25.66</td>
+                </tr>
+                <tr>
+                  <td>Qwen2-VL-72B</td>
+                  <td>70.47</td>
+                  <td>19.42</td>
+                  <td>1.07</td>
+                  <td>0.23</td>
+                  <td>18.80</td>
+                  <td>33.94</td>
+                  <td>54.43</td>
+                  <td>10.03</td>
+                  <td>74.51</td>
+                  <td>30.67</td>
+                  <td>31.36</td>
+                </tr>
+                <tr>
+                  <td colspan="12"><strong>Closed Models</strong></td>
+                </tr>
+                <tr>
+                  <td>GPT-4o 20240806</td>
+                  <td>66.70</td>
+                  <td>25.23</td>
+                  <td>22.66</td>
+                  <td>27.28</td>
+                  <td>27.12</td>
+                  <td>17.57</td>
+                  <td>60.34</td>
+                  <td>10.33</td>
+                  <td>74.65</td>
+                  <td>36.58</td>
+                  <td>36.84</td>
+                </tr>
+                <tr>
+                  <td>Claude-3.5 Sonnet</td>
+                  <td>54.81</td>
+                  <td>23.59</td>
+                  <td>13.92</td>
+                  <td>37.46</td>
+                  <td>26.45</td>
+                  <td>13.12</td>
+                  <td>25.46</td>
+                  <td>9.70</td>
+                  <td>74.44</td>
+                  <td>26.58</td>
+                  <td>30.55</td>
+                </tr>
+                <tr>
+                  <td>GeminiPro-1.5</td>
+                  <td>76.63</td>
+                  <td>25.90</td>
+                  <td>11.51</td>
+                  <td>33.59</td>
+                  <td>25.54</td>
+                  <td>16.79</td>
+                  <td>15.21</td>
+                  <td>7.43</td>
+                  <td>75.22</td>
+                  <td>35.35</td>
+                  <td>32.32</td>
+                </tr>
+                <tr>
+                  <td colspan="12"><strong>BigDocs Models (ours)</strong></td>
+                </tr>
+                <tr>
+                  <td>DocOwl-1.5-8B + BigDocs</td>
+                  <td>74.43</td>
+                  <td>33.38</td>
+                  <td>42.16</td>
+                  <td>48.54</td>
+                  <td>45.55</td>
+                  <td><strong>89.15</strong></td>
+                  <td>33.66</td>
+                  <td>3.64</td>
+                  <td>81.28</td>
+                  <td>43.46</td>
+                  <td>49.52</td>
+                </tr>
+                <tr>
+                  <td>Qwen2-VL-2B + BigDocs</td>
+                  <td>72.25</td>
+                  <td>33.74</td>
+                  <td>41.61</td>
+                  <td>52.11</td>
+                  <td>42.59</td>
+                  <td>71.65</td>
+                  <td>33.51</td>
+                  <td>9.20</td>
+                  <td>78.54</td>
+                  <td>33.97</td>
+                  <td>46.92</td>
+                </tr>
+                <tr>
+                  <td>LLAVA-NeXT-7B+ BigDocs</td>
+                  <td>72.78</td>
+                  <td>32.88</td>
+                  <td>59.66</td>
+                  <td>71.49</td>
+                  <td>46.14</td>
+                  <td>79.55</td>
+                  <td>60.63</td>
+                  <td>10.40</td>
+                  <td>80.79</td>
+                  <td>40.67</td>
+                  <td>55.50</td>
+                </tr>
+                <tr>
+                  <td>Phi3.5-V-4B + BigDocs</td>
+                  <td><strong>84.01</strong></td>
+                  <td><strong>36.78</strong></td>
+                  <td><strong>63.07</strong></td>
+                  <td><strong>71.86</strong></td>
+                  <td><strong>47.32</strong></td>
+                  <td>86.91</td>
+                  <td><strong>34.65</strong></td>
+                  <td><strong>12.05</strong></td>
+                  <td><strong>81.94</strong></td>
+                  <td><strong>44.81</strong></td>
+                  <td><strong>56.34</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
         <h2 class="title is-3">Current Limitations in the Field</h2>
         <div class="columns">
@@ -558,269 +554,326 @@
         </div>
         
         <style>
+          .small-font-table {
+            font-size: 0.75em;
+            width: 100%;
+            margin: 1em 0;
+            border-collapse: collapse;
+            overflow-x: auto;
+            display: block;
+          }
+
+          .small-font-table th,
+          .small-font-table td {
+            padding: 4px;
+            text-align: center;
+            min-width: 60px;
+            max-width: 120px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .small-font-table th {
+            background-color: #f5f5f5;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+          }
 
           .model-section {
             border-top: 2px solid #000;
           }
+
           .bigdocs-row {
-            background-color: #e0f7fa; /* Light cyan background for BigDocs rows */
+            background-color: #e0f7fa;
           }
-          .small-font-table {
-            font-size: 0.8em; /* Adjust the font size as needed */
+
+          /* Wrapper for tables to enable horizontal scrolling */
+          .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1em 0;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            border-radius: 4px;
+          }
+
+          /* Make sure the table headers stay visible when scrolling */
+          .table-wrapper thead th {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 1;
+          }
+
+          /* Responsive adjustments */
+          @media screen and (max-width: 768px) {
+            .small-font-table {
+              font-size: 0.7em;
+            }
+            
+            .small-font-table th,
+            .small-font-table td {
+              padding: 3px;
+              min-width: 50px;
+            }
           }
         </style>
 
         <!-- <section class="section"> -->
           <div class="container is-max-desktop">
             <h2 class="title is-3">Results of Training on BigDocs-7.5M</h2>
-            <table class="small-font-table" border="1" cellpadding="5" cellspacing="0" style="margin: 0 auto; text-align: center; width: auto;">
-              <thead>
-                <tr>
-                  <th>Model</th>
-                  <th>DocVQA<sub>VAL</sub></th>
-                  <th>InfoVQA<sub>VAL</sub></th>
-                  <th>DeepForm<sub>TEST</sub></th>
-                  <th>KLC<sub>TEST</sub></th>
-                  <th>WTQ<sub>TEST</sub></th>
-                  <th>TabFact<sub>TEST</sub></th>
-                  <th>ChartQA<sub>TEST</sub></th>
-                  <th>TextVQA<sub>VAL</sub></th>
-                  <th>MMIM<sub>TEST</sub></th>
-                  <th>DudeMini<sub>TEST</sub></th>
-                  <th>SlideVQA-M<sub>TEST</sub></th>
-                  <th>TableVQA<sub>TEST</sub></th>
-                  <th>Avg. Score</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- DocOwl Section -->
-                <tr class="model-section"></tr>
-                <tr>
-                  <td>DocOwl1.5-8B (instruct)</td>
-                  <td>80.73</td>
-                  <td>49.94</td>
-                  <td>68.84</td>
-                  <td>37.99</td>
-                  <td>38.87</td>
-                  <td>79.67</td>
-                  <td>68.56</td>
-                  <td>68.91</td>
-                  <td>33.67</td>
-                  <td>34.64</td>
-                  <td>31.62</td>
-                  <td>52.60</td>
-                  <td>53.84</td>
-                </tr>
-                <tr>
-                  <td>DocOwl1.5-8B (base)</td>
-                  <td>2.07</td>
-                  <td>1.84</td>
-                  <td>0.00</td>
-                  <td>0.00</td>
-                  <td>0.00</td>
-                  <td>0.00</td>
-                  <td>0.00</td>
-                  <td>0.00</td>
-                  <td>24.44</td>
-                  <td>19.07</td>
-                  <td>3.30</td>
-                  <td>13.63</td>
-                  <td>5.36</td>
-                </tr>
-                <tr>
-                  <td>DocOwl1.5-8B (base) + DocStruct4M</td>
-                  <td>75.99</td>
-                  <td>46.88</td>
-                  <td>62.77</td>
-                  <td>35.21</td>
-                  <td>32.86</td>
-                  <td>71.56</td>
-                  <td>68.36</td>
-                  <td>65.08</td>
-                  <td>33.67</td>
-                  <td>29.00</td>
-                  <td>27.03</td>
-                  <td>46.27</td>
-                  <td>49.56</td>
-                </tr>
-                <tr class="bigdocs-row">
-                  <td>DocOwl1.5-8B (base) + BigDocs (Ours)</td>
-                  <td>78.70</td>
-                  <td>47.62</td>
-                  <td>64.39</td>
-                  <td>36.93</td>
-                  <td>35.69</td>
-                  <td>72.65</td>
-                  <td>65.80</td>
-                  <td>67.30</td>
-                  <td>32.33</td>
-                  <td>32.55</td>
-                  <td>29.60</td>
-                  <td>49.03</td>
-                  <td>51.05</td>
-                </tr>
-                <tr>
-                  <td>Qwen2-VL-2B (instruct)</td>
-                  <td>89.16</td>
-                  <td>64.11</td>
-                  <td>32.38</td>
-                  <td>25.18</td>
-                  <td>38.20</td>
-                  <td>57.21</td>
-                  <td>73.40</td>
-                  <td>79.90</td>
-                  <td>42.00</td>
-                  <td>45.23</td>
-                  <td>46.50</td>
-                  <td>43.07</td>
-                  <td>53.03</td>
-                </tr>
-                <tr>
-                  <td>Qwen2-VL-2B (base)</td>
-                  <td>7.26</td>
-                  <td>0.78</td>
-                  <td>0.00</td>
-                  <td>0.00</td>
-                  <td>0.00</td>
-                  <td>0.00</td>
-                  <td>0.00</td>
-                  <td>1.14</td>
-                  <td>34.89</td>
-                  <td>28.43</td>
-                  <td>14.55</td>
-                  <td>0.00</td>
-                  <td>7.25</td>
-                </tr>
-                <tr>
-                  <td>Qwen2-VL-2B (base) + DocStruct4M</td>
-                  <td>59.53</td>
-                  <td>32.00</td>
-                  <td>53.98</td>
-                  <td>36.38</td>
-                  <td>28.48</td>
-                  <td>64.24</td>
-                  <td>54.44</td>
-                  <td>55.89</td>
-                  <td>34.89</td>
-                  <td>28.78</td>
-                  <td>22.68</td>
-                  <td>46.53</td>
-                  <td>43.15</td>
-                </tr>
-                <tr class="bigdocs-row">
-                  <td>Qwen2-VL-2B (base) + BigDocs (Ours)</td>
-                  <td>57.23</td>
-                  <td>31.88</td>
-                  <td>49.31</td>
-                  <td>34.39</td>
-                  <td>31.61</td>
-                  <td>64.75</td>
-                  <td>68.60</td>
-                  <td>61.01</td>
-                  <td>35.67</td>
-                  <td>27.19</td>
-                  <td>17.46</td>
-                  <td>47.53</td>
-                  <td>43.89</td>
-                </tr>
-                <tr>
-                  <td>Phi3.5-Vision-4B (instruct)</td>
-                  <td>86.00</td>
-                  <td>56.20</td>
-                  <td>10.47</td>
-                  <td>7.49</td>
-                  <td>17.18</td>
-                  <td>30.43</td>
-                  <td>82.16</td>
-                  <td>73.12</td>
-                  <td>46.00</td>
-                  <td>37.20</td>
-                  <td>30.93</td>
-                  <td>70.70</td>
-                  <td>45.66</td>
-                </tr>
-                <tr>
-                  <td>Phi3.5-Vision-4B + DocStruct4M</td>
-                  <td>86.76</td>
-                  <td>68.90</td>
-                  <td>70.12</td>
-                  <td>37.83</td>
-                  <td>51.30</td>
-                  <td>82.12</td>
-                  <td>79.76</td>
-                  <td>68.60</td>
-                  <td>44.11</td>
-                  <td>35.52</td>
-                  <td>31.90</td>
-                  <td>69.17</td>
-                  <td>60.51</td>
-                </tr>
-                <tr class="bigdocs-row">
-                  <td>Phi3.5-Vision-4B + BigDocs (Ours)</td>
-                  <td>87.05</td>
-                  <td>70.05</td>
-                  <td>70.97</td>
-                  <td>37.45</td>
-                  <td>51.21</td>
-                  <td>81.24</td>
-                  <td>81.56</td>
-                  <td>68.72</td>
-                  <td>45.00</td>
-                  <td>36.15</td>
-                  <td>32.47</td>
-                  <td>67.77</td>
-                  <td>60.80</td>
-                </tr>
-                <tr>
-                  <td>LLAVA-NeXT-7B (instruct)</td>
-                  <td>63.51</td>
-                  <td>30.90</td>
-                  <td>1.30</td>
-                  <td>5.35</td>
-                  <td>20.06</td>
-                  <td>52.83</td>
-                  <td>52.12</td>
-                  <td>65.10</td>
-                  <td>38.89</td>
-                  <td>17.94</td>
-                  <td>7.46</td>
-                  <td>32.87</td>
-                  <td>32.36</td>
-                </tr>
-                <tr>
-                  <td>LLAVA-NeXT-7B + DocStruct4M</td>
-                  <td>60.95</td>
-                  <td>26.14</td>
-                  <td>39.78</td>
-                  <td>28.34</td>
-                  <td>25.90</td>
-                  <td>67.72</td>
-                  <td>61.20</td>
-                  <td>52.25</td>
-                  <td>25.78</td>
-                  <td>21.70</td>
-                  <td>15.33</td>
-                  <td>27.03</td>
-                  <td>37.68</td>
-                </tr>
-                <tr class="bigdocs-row">
-                  <td>LLAVA-NeXT-7B + BigDocs (Ours)</td>
-                  <td>57.13</td>
-                  <td>24.47</td>
-                  <td>46.38</td>
-                  <td>31.09</td>
-                  <td>27.06</td>
-                  <td>72.58</td>
-                  <td>54.72</td>
-                  <td>49.06</td>
-                  <td>17.78</td>
-                  <td>22.88</td>
-                  <td>16.07</td>
-                  <td>33.13</td>
-                  <td>37.70</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-wrapper">
+              <table class="small-font-table">
+                <thead>
+                  <tr>
+                    <th>Model</th>
+                    <th>DocVQA<sub>VAL</sub></th>
+                    <th>InfoVQA<sub>VAL</sub></th>
+                    <th>DeepForm<sub>TEST</sub></th>
+                    <th>KLC<sub>TEST</sub></th>
+                    <th>WTQ<sub>TEST</sub></th>
+                    <th>TabFact<sub>TEST</sub></th>
+                    <th>ChartQA<sub>TEST</sub></th>
+                    <th>TextVQA<sub>VAL</sub></th>
+                    <th>MMIM<sub>TEST</sub></th>
+                    <th>DudeMini<sub>TEST</sub></th>
+                    <th>SlideVQA-M<sub>TEST</sub></th>
+                    <th>TableVQA<sub>TEST</sub></th>
+                    <th>Avg. Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- DocOwl Section -->
+                  <tr class="model-section"></tr>
+                  <tr>
+                    <td>DocOwl1.5-8B (instruct)</td>
+                    <td>80.73</td>
+                    <td>49.94</td>
+                    <td>68.84</td>
+                    <td>37.99</td>
+                    <td>38.87</td>
+                    <td>79.67</td>
+                    <td>68.56</td>
+                    <td>68.91</td>
+                    <td>33.67</td>
+                    <td>34.64</td>
+                    <td>31.62</td>
+                    <td>52.60</td>
+                    <td>53.84</td>
+                  </tr>
+                  <tr>
+                    <td>DocOwl1.5-8B (base)</td>
+                    <td>2.07</td>
+                    <td>1.84</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>24.44</td>
+                    <td>19.07</td>
+                    <td>3.30</td>
+                    <td>13.63</td>
+                    <td>5.36</td>
+                  </tr>
+                  <tr>
+                    <td>DocOwl1.5-8B (base) + DocStruct4M</td>
+                    <td>75.99</td>
+                    <td>46.88</td>
+                    <td>62.77</td>
+                    <td>35.21</td>
+                    <td>32.86</td>
+                    <td>71.56</td>
+                    <td>68.36</td>
+                    <td>65.08</td>
+                    <td>33.67</td>
+                    <td>29.00</td>
+                    <td>27.03</td>
+                    <td>46.27</td>
+                    <td>49.56</td>
+                  </tr>
+                  <tr class="bigdocs-row">
+                    <td>DocOwl1.5-8B (base) + BigDocs (Ours)</td>
+                    <td>78.70</td>
+                    <td>47.62</td>
+                    <td>64.39</td>
+                    <td>36.93</td>
+                    <td>35.69</td>
+                    <td>72.65</td>
+                    <td>65.80</td>
+                    <td>67.30</td>
+                    <td>32.33</td>
+                    <td>32.55</td>
+                    <td>29.60</td>
+                    <td>49.03</td>
+                    <td>51.05</td>
+                  </tr>
+                  <tr>
+                    <td>Qwen2-VL-2B (instruct)</td>
+                    <td>89.16</td>
+                    <td>64.11</td>
+                    <td>32.38</td>
+                    <td>25.18</td>
+                    <td>38.20</td>
+                    <td>57.21</td>
+                    <td>73.40</td>
+                    <td>79.90</td>
+                    <td>42.00</td>
+                    <td>45.23</td>
+                    <td>46.50</td>
+                    <td>43.07</td>
+                    <td>53.03</td>
+                  </tr>
+                  <tr>
+                    <td>Qwen2-VL-2B (base)</td>
+                    <td>7.26</td>
+                    <td>0.78</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>0.00</td>
+                    <td>1.14</td>
+                    <td>34.89</td>
+                    <td>28.43</td>
+                    <td>14.55</td>
+                    <td>0.00</td>
+                    <td>7.25</td>
+                  </tr>
+                  <tr>
+                    <td>Qwen2-VL-2B (base) + DocStruct4M</td>
+                    <td>59.53</td>
+                    <td>32.00</td>
+                    <td>53.98</td>
+                    <td>36.38</td>
+                    <td>28.48</td>
+                    <td>64.24</td>
+                    <td>54.44</td>
+                    <td>55.89</td>
+                    <td>34.89</td>
+                    <td>28.78</td>
+                    <td>22.68</td>
+                    <td>46.53</td>
+                    <td>43.15</td>
+                  </tr>
+                  <tr class="bigdocs-row">
+                    <td>Qwen2-VL-2B (base) + BigDocs (Ours)</td>
+                    <td>57.23</td>
+                    <td>31.88</td>
+                    <td>49.31</td>
+                    <td>34.39</td>
+                    <td>31.61</td>
+                    <td>64.75</td>
+                    <td>68.60</td>
+                    <td>61.01</td>
+                    <td>35.67</td>
+                    <td>27.19</td>
+                    <td>17.46</td>
+                    <td>47.53</td>
+                    <td>43.89</td>
+                  </tr>
+                  <tr>
+                    <td>Phi3.5-Vision-4B (instruct)</td>
+                    <td>86.00</td>
+                    <td>56.20</td>
+                    <td>10.47</td>
+                    <td>7.49</td>
+                    <td>17.18</td>
+                    <td>30.43</td>
+                    <td>82.16</td>
+                    <td>73.12</td>
+                    <td>46.00</td>
+                    <td>37.20</td>
+                    <td>30.93</td>
+                    <td>70.70</td>
+                    <td>45.66</td>
+                  </tr>
+                  <tr>
+                    <td>Phi3.5-Vision-4B + DocStruct4M</td>
+                    <td>86.76</td>
+                    <td>68.90</td>
+                    <td>70.12</td>
+                    <td>37.83</td>
+                    <td>51.30</td>
+                    <td>82.12</td>
+                    <td>79.76</td>
+                    <td>68.60</td>
+                    <td>44.11</td>
+                    <td>35.52</td>
+                    <td>31.90</td>
+                    <td>69.17</td>
+                    <td>60.51</td>
+                  </tr>
+                  <tr class="bigdocs-row">
+                    <td>Phi3.5-Vision-4B + BigDocs (Ours)</td>
+                    <td>87.05</td>
+                    <td>70.05</td>
+                    <td>70.97</td>
+                    <td>37.45</td>
+                    <td>51.21</td>
+                    <td>81.24</td>
+                    <td>81.56</td>
+                    <td>68.72</td>
+                    <td>45.00</td>
+                    <td>36.15</td>
+                    <td>32.47</td>
+                    <td>67.77</td>
+                    <td>60.80</td>
+                  </tr>
+                  <tr>
+                    <td>LLAVA-NeXT-7B (instruct)</td>
+                    <td>63.51</td>
+                    <td>30.90</td>
+                    <td>1.30</td>
+                    <td>5.35</td>
+                    <td>20.06</td>
+                    <td>52.83</td>
+                    <td>52.12</td>
+                    <td>65.10</td>
+                    <td>38.89</td>
+                    <td>17.94</td>
+                    <td>7.46</td>
+                    <td>32.87</td>
+                    <td>32.36</td>
+                  </tr>
+                  <tr>
+                    <td>LLAVA-NeXT-7B + DocStruct4M</td>
+                    <td>60.95</td>
+                    <td>26.14</td>
+                    <td>39.78</td>
+                    <td>28.34</td>
+                    <td>25.90</td>
+                    <td>67.72</td>
+                    <td>61.20</td>
+                    <td>52.25</td>
+                    <td>25.78</td>
+                    <td>21.70</td>
+                    <td>15.33</td>
+                    <td>27.03</td>
+                    <td>37.68</td>
+                  </tr>
+                  <tr class="bigdocs-row">
+                    <td>LLAVA-NeXT-7B + BigDocs (Ours)</td>
+                    <td>57.13</td>
+                    <td>24.47</td>
+                    <td>46.38</td>
+                    <td>31.09</td>
+                    <td>27.06</td>
+                    <td>72.58</td>
+                    <td>54.72</td>
+                    <td>49.06</td>
+                    <td>17.78</td>
+                    <td>22.88</td>
+                    <td>16.07</td>
+                    <td>33.13</td>
+                    <td>37.70</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         <!-- </section> -->
         <ul>
